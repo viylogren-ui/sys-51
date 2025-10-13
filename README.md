@@ -4,3 +4,5 @@ My name is Vitaliy.
 I'm stadying at the netology-school.
 It's very interesting to learn something new.
 Thank you, netology, for new knowledge.
+
+And I will try to stady well.
