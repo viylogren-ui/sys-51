@@ -6,3 +6,8 @@ It's very interesting to learn something new.
 Thank you, netology, for new knowledge.
 
 And I will try to stady well.
+
+"main. commit home_1"
+"main. commit home_2"
+"main. commit home_3"
+"main. commit home_4"
