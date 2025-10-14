@@ -1,4 +1,4 @@
-# first_repo
+# sys-51
 This is my first repository.
 My name is Vitaliy.
 I'm stadying at the netology-school.
