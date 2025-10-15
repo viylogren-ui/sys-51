@@ -1,0 +1,19 @@
+---
+- name: webservers for web-a, web-b
+  gather_facts: true
+  become: yes
+  hosts: webservers
+  vars:
+    ansible_ssh_user: user
+  roles:
+    - geerlingguy.nginx
+
+- name: mysql for web-db
+  gather_facts: true
+  become: yes
+  vars:
+    ansible_ssh_user: user
+  hosts: database
+  roles:
+    - geerlingguy.mysql
+  
