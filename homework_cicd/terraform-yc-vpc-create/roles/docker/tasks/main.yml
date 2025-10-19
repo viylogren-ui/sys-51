@@ -63,5 +63,5 @@
 
 
 #Запуск docker image nexus из презентации
-- name: run nexus-image docker
-  command: docker run -d -p 8081:8081 --name nexus -e INSTALL4J_ADD_VM_PARAMS="-Xms273m -Xmx273m -XX:MaxDirectMemorySize=273m" sonatype/nexus3  
+#- name: run nexus-image docker
+#  command: docker run -d -p 8081:8081 --name nexus -e INSTALL4J_ADD_VM_PARAMS="-Xms273m -Xmx273m -XX:MaxDirectMemorySize=273m" sonatype/nexus3  

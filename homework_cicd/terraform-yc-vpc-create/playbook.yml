@@ -1,13 +1,13 @@
 ---
-- name: jenkins for jenkins-server
-  gather_facts: true
-  become: yes
-  hosts: jenkins
-  vars:
-    ansible_ssh_user: vitren
-  roles:
-    - geerlingguy.java
-    - geerlingguy.jenkins
+#- name: jenkins for jenkins-server
+#  gather_facts: true
+#  become: yes
+#  hosts: jenkins
+#  vars:
+#    ansible_ssh_user: vitren
+#  roles:
+#    - geerlingguy.java
+#    - geerlingguy.jenkins
 
 - name: nexus for nexus-server
   gather_facts: true
@@ -15,6 +15,15 @@
   vars:
     ansible_ssh_user: vitren
   hosts: nexus
+  roles:
+     - docker
+
+- name: dockerjenkins for jenkins-server
+  gather_facts: true
+  become: yes
+  hosts: jenkins
+  vars:
+    ansible_ssh_user: vitren
   roles:
      - docker
 

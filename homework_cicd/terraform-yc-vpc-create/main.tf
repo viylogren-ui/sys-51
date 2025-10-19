@@ -10,7 +10,7 @@ resource "yandex_compute_instance" "jenkins" {
 
   resources {
     cores         = 2
-    memory        = 1
+    memory        = 4
     core_fraction = 20
   }
 
@@ -42,7 +42,7 @@ resource "yandex_compute_instance" "nexus" {
 
   resources {
     cores         = 2
-    memory        = 2
+    memory        = 4
     core_fraction = 20
   }
 
