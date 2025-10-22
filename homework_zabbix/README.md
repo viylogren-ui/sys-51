@@ -5,7 +5,7 @@
 
 ### Задание 1
 
-`Приведите ответ в свободной форме........`
+`Установка Zabbix Server с web-интерфейсом`
 
 1. `Установка postgresql: sudo apt install postgresql`
 
@@ -46,17 +46,22 @@
    `sudo systemctl restart zabbix-server apache2`
    `sudo systemctl enable zabbix-server apache2`
 
-``
-![Авторизация в админке zabbix.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/1.1_Авторизация_в_админке_zabbix.png)` 
+`Авторизация в админке zabbix`
 
-``
-![Успешный вход](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/1.2_Успешный_вход.png)`
+![Авторизация в админке zabbix.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/1.1_Авторизация_в_админке_zabbix.png)
+
+
+`Успешный вход`
+
+![Успешный вход](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/1.2_Успешный_вход.png)
 
 ---
 
 ### Задание 2
 
    `Установка zabbix-client на хосты zabbix-server и zabbix-client`
+
+   `Текст использованных команд`
 
 1. `zabbix-server`
 
@@ -70,13 +75,16 @@
 ```
 2. `zabbix-client:` 
 
-   `устанавливаю репозиторий аналогично заданию 1`
+`устанавливаю репозиторий аналогично заданию 1`
+
 ```
 # wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian11_all.deb
 # dpkg -i zabbix-release_latest_6.0+debian11_all.deb
 # apt update
 ```
-   `устанавливаю агента аналогично zabbix-serer`
+
+`устанавливаю агента аналогично zabbix-serer`
+
 ```
 # apt install zabbix-agent
 # systemctl restart zabbix-agent
@@ -84,6 +92,38 @@
 ```
 
 
-``
+`zabbix-agent установлен на zabbix-server и zabbix-client`
 
-![Название скриншота](ссылка на скриншот)`
+![zabbix-agent установлен на zabbix-server и zabbix-client](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.1_zabbix-agent_устаеновлен_на_zabbix_server,_zabbix_client.png)
+
+`Раздел Configuration>Hosts`
+
+![раздел Configuration>Hosts](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.2_configurations-hosts.png)
+
+`Клиенты в web-интерфейсе`
+
+![Клиенты в web-интерфейсе](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.3_добавил_клиентов_в_web-интерфейсе.png)
+
+`Положительный ответ от агента zabbix-server`
+
+![Положительный ответ от агента zabbix-server](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.4_ответ_от_агента_zabbix-server.png)
+
+`Конфигурация_Server=_для_клиентов_zabbix-server_zabbix-client`
+
+![Конфигурация_Server_для_клиентов_zabbix-server_zabbix-client](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/img/2.5_конфигурация_Server_для_клиентов_zabbix-server_zabbix-client.png)
+
+`Оба_клиента_связались_с_сервером`
+
+![Оба_клиента_связались_с_сервером](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.6_оба_клиента_связались_с_сервером.png)
+
+`Monitoring>Latest с клиента zabbix-server`
+
+![Monitoring>Latest с клиента zabbix-server](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.7_метрики_с_клиента_zabbix-server.png)
+
+`Monitoring>Latest с клиента zabbix-client`
+
+![Monitoring>Latest с клиента zabbix-client](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.8_метрики_с_клиента_хоста_zabbix-client.png)
+
+`Logs zabbix-agentd на обоих хостах`
+
+![Logs zabbix-agentd на обоих хостах](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.9_скриншоты_логов_zabbix_agentd.png)
