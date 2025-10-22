@@ -110,7 +110,7 @@
 
 `Конфигурация_Server=_для_клиентов_zabbix-server_zabbix-client`
 
-![Конфигурация_Server_для_клиентов_zabbix-server_zabbix-client](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/img/2.5_конфигурация_Server_для_клиентов_zabbix-server_zabbix-client.png)
+![Конфигурация_Server_для_клиентов_zabbix-server_zabbix-client](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/2.5_конфигурация_Server_для_клиентов_zabbix-server_zabbix-client.png)
 
 `Оба_клиента_связались_с_сервером`
 
