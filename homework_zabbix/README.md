@@ -46,9 +46,10 @@
    `sudo systemctl restart zabbix-server apache2`
    `sudo systemctl enable zabbix-server apache2`
 
-
+``
 ![Авторизация в админке zabbix.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/1.1_Авторизация_в_админке_zabbix.png)` 
 
+``
 ![Успешный вход](https://github.com/viylogren-ui/sys-51/blob/main/homework_zabbix/img/1.2_Успешный_вход.png)`
 
 ---
