@@ -10,7 +10,7 @@
 
 ![1_router_config](https://github.com/viylogren-ui/sys-51/blob/main/homework_disaster_recovery/img/1_router_config.png)
 
-![2_echo_frame](https://github.com/viylogren-ui/sys-51/blob/main/homework_disaster_recovery/img2_echo_frame.png)
+![2_echo_frame](https://github.com/viylogren-ui/sys-51/blob/main/homework_disaster_recovery/img/2_echo_frame.png)
 
 
 ---
