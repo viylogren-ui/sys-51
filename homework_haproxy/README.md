@@ -13,7 +13,8 @@
 
 `Ссылка на конфигурационный файл:`
 
-![haproxy_4.cfg](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haproxy/haproxy_4.cfg)
+https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haproxy/haproxy_4.cfg
+
 
 ### Задание 2
 
@@ -28,4 +29,4 @@
 
 `Ссылка на конфигурационный файл:`
 
-![haproxy_7.cfg](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haproxy/haproxy_7.cfg)
+https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haproxy/haproxy_7.cfg
