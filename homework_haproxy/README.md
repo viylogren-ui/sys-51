@@ -7,8 +7,6 @@
 
 ![1.1_haproxy_4_level_OSI](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/1.1_haproxy_4_level_OSI.jpg)
 
-![1.2_haproxy_4_level_OSI_config](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/1.2_haproxy_4_level_OSI_config.jpg)
-
 ![1.3_haproxy_4_level_OSI_stats](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/1.3_haproxy_4_level_OSI_stats.jpg)
 
 ### Ссылка на конфигурационный файл:
@@ -22,8 +20,6 @@ https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haprox
 
 
 ![2.1_haproxy_7_levelOSI_weight_round_robbin](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/2.1_haproxy_7_levelOSI_weight_round_robbin.jpg)
-
-![2.2_haproxy_7_levelOSI_weight_round_robbin_config](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/2.2_haproxy_7_levelOSI_weight_round_robbin_config.jpg)
 
 ![2.3_haproxy_7_levelOSI_weight_round_robbin_stats](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/2.3_haproxy_7_levelOSI_weight_round_robbin_stats.jpg)
 
