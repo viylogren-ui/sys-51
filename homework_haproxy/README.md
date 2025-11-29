@@ -11,6 +11,9 @@
 
 ![1.3_haproxy_4_level_OSI_stats](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/1.3_haproxy_4_level_OSI_stats.jpg)
 
+`Ссылка на конфигурационный файл:`
+
+![haproxy_4.cfg](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haproxy/haproxy_4.cfg)
 
 ### Задание 2
 
@@ -22,3 +25,7 @@
 ![2.2_haproxy_7_levelOSI_weight_round_robbin_config](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/2.2_haproxy_7_levelOSI_weight_round_robbin_config.jpg)
 
 ![2.3_haproxy_7_levelOSI_weight_round_robbin_stats](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/img/2.3_haproxy_7_levelOSI_weight_round_robbin_stats.jpg)
+
+`Ссылка на конфигурационный файл:`
+
+![haproxy_7.cfg](https://github.com/viylogren-ui/sys-51/blob/main/homework_haproxy/configs_haproxy/haproxy_7.cfg)
