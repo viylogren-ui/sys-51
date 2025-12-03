@@ -11,8 +11,8 @@ rsync -a --progress --delete --exclude '.*/' ~/ /tmp/backup
 
 `Данная команда позволяет создать зеркальную копию домашней директории пользователя в директорию /tmp/backup, при этом из синхронизации исключены все скрытые директории`
 
-![Команда](homework_rsync/img/1.1_rsync_delete_exclude.jpg)
-![Результат выполнения команды](homework_rsync/img/1.2_rsync_delete_exclude_results.jpg)
+![Команда](https://github.com/viylogren-ui/sys-51/blob/main/homework_rsync/img/1.1_rsync_delete_exclude.jpg)
+![Результат выполнения команды](https://github.com/viylogren-ui/sys-51/blob/main/homework_rsync/img/1.2_rsync_delete_exclude_results.jpg)
 ---
 
 ### Задание 2
