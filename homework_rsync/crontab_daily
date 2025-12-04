@@ -22,4 +22,4 @@
 #
 # m h  dom mon dow   command
 
-@daily /home/vitas/backup.sh
+  0 22 * * * /home/vitas/backup.sh
