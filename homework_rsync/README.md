@@ -21,3 +21,5 @@ rsync -a --progress --delete --exclude '.*/' ~/ /tmp/backup
 
 
 ![Результат работы утилиты](https://github.com/viylogren-ui/sys-51/blob/main/homework_rsync/img/2.1_rsync_cron_daily.jpg)
+
+[Ссылка на файл crontab](crontab_daily)
