@@ -1,0 +1,10 @@
+---
+- name: network-interfaces_nat
+  gather_facts: true
+  become: yes
+  hosts: network-interfaces_nat
+  vars:
+    ansible_ssh_user: vitas
+  roles:
+    - geerlingguy.nginx
+  
