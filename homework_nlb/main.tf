@@ -91,7 +91,7 @@ resource "yandex_lb_network_load_balancer" "network_load_balancer" {
   }  
 }
 
-# Блок вывода информации об имеющихся балансировщиках по команде terraform output
+# Блок вывода информации о балансировщике по команде terraform output
 
 data "yandex_lb_network_load_balancer" "my_wm" {
   network_load_balancer_id = yandex_lb_network_load_balancer.network_load_balancer.id
