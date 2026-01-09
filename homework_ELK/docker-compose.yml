@@ -6,7 +6,6 @@ services:
     image: docker.elastic.co/logstash/logstash:7.17.9
     environment:
       XPACK_MONITORING_ENABLED: "false"
-#      ES_HOST: "elasticsearch:9200"
     networks:
       - elk
     ports:
@@ -61,19 +60,3 @@ networks:
 volumes:
   elasticsearch-data:
     driver: local
-
-# echo '192.168.0.1 internal 500' | nc localhost 5044
-
-#  filebeat:
-#    image: docker.elastic.co/beats/filebeat:7.17.9
-##    command: --strict.perms=false
-##    user: root
-#    volumes:
-#      - ./configs/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
-#    depends_on:
-#      - logstash
-#      - elasticsearch
-#      - kibana
-##      - /projects/test/filebeat.yml:/usr/share/filebeat/filebeat.yml
-##      - /var/lib/docker:/var/lib/docker:ro
-##      - /var/run/docker.sock:/var/run/docker.sock
