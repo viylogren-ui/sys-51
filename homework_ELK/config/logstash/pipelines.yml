@@ -1,0 +1,8 @@
+- pipeline.id: renev_vs_nginx_logstash
+  pipeline.workers: 1
+  pipeline.batch.size: 1
+  path.config: "/usr/share/logstash/config/pipelines/nginx.conf"
+#  path.config: "/usr/share/logstash/config/pipelines/grok_logstash.conf"
+#  path.config: "/usr/share/logstash/config/pipelines/example_logstash.conf"
+
+
