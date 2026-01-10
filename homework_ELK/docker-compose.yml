@@ -7,7 +7,7 @@ services:
     environment:
       XPACK_MONITORING_ENABLED: "false"
     networks:
-      - elk
+      - my
     ports:
       - 5044:5044
     volumes:
@@ -25,7 +25,7 @@ services:
       - xpack.security.enabled=false
       - discovery.type=single-node
     networks:
-      - elk
+      - my
     volumes:
       - elasticsearch-data:/usr/share/elasticsearch/data
     ports:
@@ -37,7 +37,7 @@ services:
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     networks:
-      - elk
+      - my
     ports:
       - 5601:5601
     depends_on:
@@ -48,13 +48,13 @@ services:
     ports:
       - "80:80"
     networks:
-      - elk
+      - my
     volumes:
       - ./nginxlogs:/var/log/nginx 
     restart: always
 
 networks:
-  elk:
+  my:
     driver: bridge
 
 volumes:
