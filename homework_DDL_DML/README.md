@@ -52,7 +52,8 @@ customer         | customer_id
 
 ### Решение 2
 
-![Названия таблиц и первичных ключей](Table.ods)
+
+[Названия таблиц и первичных ключей](Table.ods)
 
 `Названия таблиц и первичных ключей`
 ![4_table.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4_table.png)
