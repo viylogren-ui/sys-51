@@ -1,5 +1,0 @@
-cluster.name: "elk"
-network.host: 0.0.0.0 # Для корректной работы внутри контейнера
-
-#xpack.security.enabled: true 
-#xpack.license.self_generated.type: basic 
