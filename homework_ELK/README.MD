@@ -1,7 +1,5 @@
 # Домашнее задание к занятию "`ELK`" - `Ренёв Виталий`
 
-
-
 ### Задание 1. Elasticsearch 
 
 Установите и запустите Elasticsearch, после чего поменяйте параметр cluster_name на случайный. 
@@ -46,4 +44,21 @@
 
 `kibana_logs`
 ![4_1_logstash_nginx.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_ELK/img/4_1_logstash_nginx.png)
+
+### Задание 4. Filebeat. 
+
+Установите и запустите Filebeat. Переключите поставку логов Nginx с Logstash на Filebeat. 
+
+*Приведите скриншот интерфейса Kibana, на котором видны логи Nginx, которые были отправлены через Filebeat.*
+
+### Решение 4.
+
+`nginx-filebeat-logstash`
+![5_0_filebeat_nginx.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_ELK/img/5_0_filebeat_nginx.png)
+
+`elasticsearch - localhost:9200/_cat/indices`
+![5_1_filebeat_nginx.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_ELK/img/5_1_filebeat_nginx.png)
+
+`kibana_logs`
+![5_2_filebeat_nginx.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_ELK/img/5_2_filebeat_nginx.png)
 

@@ -72,9 +72,3 @@ volumes:
 # curl http://localhost:9200/_aliases
 # curl http://localhost:9200//_cat/indices
 # http://localhost:5601/app/dev_tools#/console
-
-
-
-#      - /projects/test/filebeat.yml:/usr/share/filebeat/filebeat.yml
-#      - /var/lib/docker:/var/lib/docker:ro
-#      - /var/run/docker.sock:/var/run/docker.sock

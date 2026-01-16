@@ -9,4 +9,4 @@ processors:
       fields: ["beat", "input_type", "prospector", "input", "host", "agent"]
 
 output.logstash: 
-  hosts: ["localhost:5044"]
+  hosts: ["logstash:5044"]
