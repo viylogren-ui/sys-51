@@ -12,7 +12,7 @@
 
 `RabbitMQ`
 ![1_RabbitMQ.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/1_RabbitMQ.png)
----
+
 
 ### Задание 2. Отправка и получение сообщений
 
@@ -35,7 +35,7 @@ $ pip install pika
 
 ### Решение 2.
 
-`RabbitMQ.png`
+`RabbitMQ`
 ![2_producer_RabbitMQ.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/2_producer_RabbitMQ.png)
 
 `RabbitMQ.png`
@@ -83,9 +83,13 @@ $ rabbitmqadmin get queue='hello'
 
 
 `Результат вывода команды rabbitmqctl cluster_status`
-![3_cluster_status_server_1.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/c3_cluster_status_server_1.png)
+![3_cluster_status_server_1.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/3_cluster_status_server_1.png)
 
 
-`Политика ha-all на кластер.png`
+`Политика ha-all на кластер`
+![3.0_ha-all-priority.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/3.0_ha-all-priority.png)
+
+
+`producer-consumer`
 ![3.2_ha-all-priority.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/3.2_ha-all-priority.png)
 
