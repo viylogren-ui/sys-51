@@ -43,7 +43,6 @@ $ pip install pika
 
 ---
 
-
 ### Задание 3. Подготовка HA кластера
 
 Используя Vagrant или VirtualBox, создайте вторую виртуальную машину и установите RabbitMQ.
@@ -79,35 +78,14 @@ $ rabbitmqadmin get queue='hello'
 
 ### Решение 3.
 
-По заданию создал вторую виртуальную машину. Установил на ней RabbitMQ, создал на обеих машинах файл /etc/hosts с названиями и IP-адресами хостов. PING по именам и IP проходит, rabbitmqctl cluster_status показывает ноды. 
-
-`Файл /etc/hosts на обеих машинах, PING в обе стороны проходит`
-![etc_hosts_ping.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/etc_hosts_ping.png)
+`Кластер из двух нод`
+![3_cluster_server_1.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/3_cluster_server_1.png)
 
 
-`Результат вывода команды rabbitmqctl cluster_status на server2`
-![cluster_status_server2.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/cluster_status_server2.png)
+`Результат вывода команды rabbitmqctl cluster_status`
+![3_cluster_status_server_1.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/c3_cluster_status_server_1.png)
 
-`При попытке создать кластер выдает ошибку. Прошу подсказку.`
 
-```
-sudo rabbitmqctl join_cluster rabbit@Server2
-Clustering node rabbit@Server1 with rabbit@Server2
+`Политика ha-all на кластер.png`
+![3.2_ha-all-priority.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_RabbitMQ/img/3.2_ha-all-priority.png)
 
-01:15:17.270 [error] Feature flags: error while running:
-Feature flags:   rabbit_ff_controller:running_nodes[]
-Feature flags: on node `rabbit@Server2`:
-Feature flags:   exception error: {erpc,noconnection}
-Feature flags:     in function  erpc:call/5 (erpc.erl, line 1376)
-Feature flags:     in call from rabbit_ff_controller:rpc_call/5 (rabbit_ff_controller.erl, line 1616)
-Feature flags:     in call from rabbit_ff_controller:list_nodes_clustered_with/1 (rabbit_ff_controller.erl, line 570)
-Feature flags:     in call from rabbit_ff_controller:check_node_compatibility_task/3 (rabbit_ff_controller.erl, line 433)
-Feature flags:     in call from rabbit_db_cluster:can_join/1 (rabbit_db_cluster.erl, line 62)
-Feature flags:     in call from rabbit_db_cluster:join/2 (rabbit_db_cluster.erl, line 95)
-Feature flags:     in call from erpc:execute_call/4 (erpc.erl, line 1250)
-
-Error:
-{:aborted_feature_flags_compat_check, {:error, {:erpc, :noconnection}}}
-```
-
-`Заодно напишите пожалуйста команду, с помощью которой создается политика ha-all на всех очередях. Пока тоже безрезультативно.`
