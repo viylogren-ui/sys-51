@@ -81,6 +81,8 @@ customer         | customer_id
 
 ### Решение 3*
 
+### Вариант 1:
+
 `Команда REVOKE INSERT, UPDATE, DELETE ON sakila.* FROM 'sys_temp'@'localhost'; возвращает ошибку.`
 
 ![5_grants_revoke_error.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/5_grants_revoke_error.png)
@@ -91,3 +93,11 @@ customer         | customer_id
 
 ![5_show_grants_from_sys_temp.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/5_show_grants_from_sys_temp.png)
 
+
+### Вариант 2:
+
+`Удалил пользователя sys_temp, создал его заново и выдал права только SELECT на БД sakila`
+
+![6_drop_user.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/6_drop_user.png)
+
+![6_grands_for_sys_temp.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/6_grands_for_sys_temp.png)
