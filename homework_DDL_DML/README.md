@@ -28,18 +28,22 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 ### Решение 1.
 
 `Список пользователей в БД`
+
 ![1_users_mysql.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/1_users_mysql.png)
 
 
 `Права пользователя sys_temp`
+
 ![2_grants_for_sys_temp.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/2_grants_for_sys_temp.png)
 
 
 `Список всех таблиц восстановленной из дампа БД sakila`
-![3.1_show_tables.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/3.1_show_tables.png)
+
+![3.1_show_all_tables_in_sakila.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/3.1_show_all_tables_in_sakila.png)
 
 
 `ER-модель`
+
 ![3.2_ER-model.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/3.2_ER-model.png)
 
 
@@ -52,9 +56,38 @@ customer         | customer_id
 
 ### Решение 2
 
+`Вывод названий таблиц и наименований колонок с первичными ключами`
+
+![4.0_show_tables_with_primary_key.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4.0_show_tables_with_primary_key.png)
+
+![4_tables_with_primary_key.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4_tables_with_primary_key.png)
+
+`Данная команда вывела все таблицы, в которых присутствуют первичные ключи, включая таблицы, которые являются связующими для осуществления типа связи "многие ко многим" и для таблиц "представлений".`
+
+`Итого: в БД sakila 13 таблиц с первичными ключами`
+
+![4.1_tables_with_primary_key.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4.1_tables_with_primary_key.png)
 
 [Названия таблиц и первичных ключей](Table.ods)
 
-`Названия таблиц и первичных ключей`
-![4_table.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4_table.png)
+
+## Дополнительные задания (со звёздочкой*)
+Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
+
+### Задание 3*
+3.1. Уберите у пользователя sys_temp права на внесение, изменение и удаление данных из базы sakila.
+
+3.2. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+
+### Решение 3*
+
+`Команда REVOKE INSERT, UPDATE, DELETE ON sakila.* FROM 'sys_temp'@'localhost'; возвращает ошибку.`
+
+![5_grants_revoke_error.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/5_grants_revoke_error.png)
+
+`Убрал у пользователя sys_temp права на внесение, изменение и удаление данных из всех баз командой REVOKE INSERT, UPDATE, DELETE ON *.* FROM 'sys_temp'@'localhost';`
+
+![5_revoke_grants_from_sys_temp.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/5_revoke_grants_from_sys_temp.png)
+
+![5_show_grants_from_sys_temp.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/5_show_grants_from_sys_temp.png)
 
