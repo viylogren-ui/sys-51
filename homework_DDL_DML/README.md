@@ -62,9 +62,9 @@ customer         | customer_id
 
 ![4_tables_with_primary_key.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4_tables_with_primary_key.png)
 
-`Данная команда вывела все таблицы, в которых присутствуют первичные ключи, включая таблицы, которые являются связующими для осуществления типа связи "многие ко многим" и для таблиц "представлений".`
+`Данная команда вывела все таблицы, в которых присутствуют первичные ключи, включая таблицы, которые являются связующими для осуществления типа связи "многие ко многим" (film_actor, film-category) и для таблицы "представления" (film_text).`
 
-`Итого: в БД sakila 13 таблиц с первичными ключами`
+`Итого: в БД sakila 13 взаимосвязанных таблиц с первичными ключами`
 
 ![4.1_tables_with_primary_key.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_DDL_DML/img/4.1_tables_with_primary_key.png)
 
