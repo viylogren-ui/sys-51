@@ -31,30 +31,47 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 
 ### Решение 2
 
+`Для оптимизации запроса целесообразно выполнить следующие мероприятия:`
+
+1. `Заменить DISTINCT И SUM(p.amount) over (partition by c.customer_id, f.title) на GROUP BY`
+2. `Использовать JOIN`
+3. `Отказаться от функции DATE()`
+4. `Для ускорени можно добавить индекс: INDEX(payment_data) в таблице payment`
+
+`Код можно преобразовать в следующий вид`
+
 ```
 EXPLAIN ANALYZE
-SELECT DISTINCT CONCAT(c.last_name, ' ', c.first_name), SUM(p.amount) over (partition by c.customer_id, f.title)
-FROM payment p, rental r, customer c, inventory i, film f
+SELECT 
+	CONCAT(c.last_name, ' ', c.first_name) AS full_name,
+	SUM(p.amount) AS total_amount_per_customer_per_film
+FROM payment p
+JOIN rental r ON p.payment_date = r.rental_date
+JOIN customer c ON r.customer_id = c.customer_id
+JOIN inventory i ON r.inventory_id = i.inventory_id
+JOIN film f ON i.film_id = f.film_id
 WHERE 
-	DATE(p.payment_date) = '2005-07-30' AND 
-	p.payment_date = r.rental_date AND 
-	r.customer_id = c.customer_id AND 
-	i.inventory_id = r.inventory_id;
+	p.payment_date >= '2005-07-30' AND p.payment_date < '2005-07-31'
+GROUP BY 
+c.customer_id, full_name;
 ```
+`Результат исходного запроса`
+![2.1.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.1.png)
 
 
-![2.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.png)
+`Результат запроса после оптмизации кода`
+![2.2.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.2.png)
 
 
-## Дополнительные задания (со звёздочкой*)
-Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
+![2.2.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.2.png)
 
 ### Задание 3*
 
 Самостоятельно изучите, какие типы индексов используются в PostgreSQL. Перечислите те индексы, которые используются в PostgreSQL, а в MySQL — нет.
 
-*Приведите ответ в свободной форме.*
+### Решение 3*
 
+GiST, SP-GiST, GIN, BRIN, R-Tree
 
 
 
