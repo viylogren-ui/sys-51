@@ -63,7 +63,7 @@ c.customer_id, full_name;
 ![2.2.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.2.png)
 
 
-![2.2.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.2.png)
+![2.3.png](https://github.com/viylogren-ui/sys-51/blob/main/homework_SQL_index/img/2.3.png)
 
 ### Задание 3*
 
