@@ -1,0 +1,11 @@
+[mysqld]
+server-id=1
+log-bin = mysql-bin
+binlog_format=ROW
+
+# server-id — уникальный идентификатор сервера в репликационной топологии.
+# binlog_format — определяет формат записи изменений в бинарный лог (binary log).
+# Возможные значения:
+# - ROW (по умолчанию в MySQL 8.0+) — записывает изменённые строки данных
+# - STATEMENT — записывает SQL-запросы
+# - MIXED — комбинация ROW и STATEMENT
