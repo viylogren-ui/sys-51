@@ -1,0 +1,10 @@
+#cloud-config 
+# создаю пользователя vitas в ВМ, добавляю в группу sudo, с оболочкой bash,
+# без пароля для повышения привилегий, доступ по ssh с ключем ssh-ed25519
+users:
+  - name: vitas
+    groups: sudo
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYQ5sEmwilsTBwf13m2AXDtyoi7XF/EUa/TdN2Kcmnj vitaliyrenev@vitas
