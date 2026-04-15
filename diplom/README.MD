@@ -1,4 +1,4 @@
-#  Дипломная работа по профессии «Системный администратор - Ренёв Виталий»
+#  Дипломная работа по профессии «Системный администратор» Ренёв Виталий
 
 ## Решение:
 
@@ -111,11 +111,9 @@
 Запускаю установку zabbix-server, zabbix-agent:
 
 `zabbix-server`
-
 ![1.12_zabbix_server.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.12_zabbix_server.png)
 
 `zabbix-agent`
-
 ![1.13_zabbix_agent.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.13_zabbix_agent.png)
 
 
@@ -146,17 +144,14 @@
 Запускаю поочередно kibana.yml, elasticsearch.yml, filebeat.yml.
 
 `Установка kibana`
-
 ![1.17_kibana.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.17_kibana.png)
 
 
 `Установка elasticsearch`
-
 ![1.18_elasticsearch.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.18_elasticsearch.png)
 
 
 `Установка filebeat`
-
 ![1.19_filebeat.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.19_filebeat.png)
 
 Удостоверяюсь в поступлении логов в дашборде kibana
