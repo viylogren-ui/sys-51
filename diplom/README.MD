@@ -59,10 +59,12 @@
 
 
 `Созданный Application Load Balancer`
+
 ![1.4_alb.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.4_alb.png)
 
 
 `Application Load Balancer HTTP проверка`
+
 ![1.4.1_alb.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.4.1_alb.png)
 
 
