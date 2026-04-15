@@ -1,0 +1,9 @@
+
+cluster.name: renev-vs-cluster # Имя кластера
+node.name: elasticsearch-server # Уникальное имя для конкретного экземпляра сервера.
+path.data: /var/lib/elasticsearch # Путь к директории с данными.
+path.logs: /var/log/elasticsearch # Путь к лог-файлам.
+network.host: 0.0.0.0 # IP-адрес, который будет слушать Elasticsearch
+http.port: 9200 # Порт для HTTP-запросов (по умолчанию 9200).
+xpack.security.enabled: false
+discovery.type: single-node
