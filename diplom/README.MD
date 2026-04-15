@@ -47,42 +47,34 @@
 С помощью команды terraform apply из директории terraform запускаю код для развертывания инфраструктуры:
 
 `Результат выполнения команды terraform apply`
-
 ![1.1_terraform_apply.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.1_terraform_apply.png)
 
 
 `Развернутая инфраструктура в YC`
-
 ![1.2_terraform_apply.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.2_terraform_apply.png)
 
 
 `Созданные ВМ в YC`
-
 ![1.3_terraform_apply.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.3_terraform_apply.png)
 
 
 `Созданный Application Load Balancer`
-
-![1.3_terraform_apply.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.3_terraform_apply.png)
+![1.4_alb.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.4_alb.png)
 
 
 `Application Load Balancer HTTP проверка`
-
 ![1.4.1_alb.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.4.1_alb.png)
 
 
 `Расписание снимков состояний ВМ`
-
 ![1.5_snapshots.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.5_snapshots.png)
 
 
 `Настройка сетей, подсетей`
-
 ![1.6_networks.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.6_networks.png)
 
 
 `Инвентори-файл для ansible`
-
 ![1.7_hosts.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.7_hosts.png)
 
 #
@@ -109,6 +101,7 @@
 
 ![1.11_alb.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.11_alb.png)
 
+#
 
 В файле [zabbix-server.yml](https://github.com/viylogren-ui/sys-51/blob/main/diplom/ansible/zabbix-server.yml) в соответствии с инструкцией с официального сайта поэтапно прописан порядок установки zabbix-server, zabbix-agent и необходимых зависимостей на управляемый хост zabbix-server, который будет мониторить состояние web-севреров.
 В файле [zabbix-agent.yml](https://github.com/viylogren-ui/sys-51/blob/main/diplom/ansible/zabbix-agent.yml) аналогично в соответствии с официальной инструкцией устанавливаю zabbix-agent на web-сервера и прописываю в файле конфигурации zabbix_agentd.conf путь к zabbix-server.
@@ -138,7 +131,7 @@
 
 ![1.16_web_health.png](https://github.com/viylogren-ui/sys-51/blob/main/diplom/img/1.16_web_health.png)
 
-
+#
 
 Для сбора логов развернул ELK стек. Для установки компонентов добавил репозиторий из зеркала Yandex mirror, установил необходимые компоненты, связал друг с другом с помощью файлов конфигурации и проконтролировал поступление логов в дашборде kibana
 
