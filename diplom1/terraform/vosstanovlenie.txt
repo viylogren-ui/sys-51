@@ -1,6 +1,0 @@
-yc compute instance create \
- --name bastion \
- --zone ru-central1-a \
- --public-ip \
- --create-boot-disk snapshot-name=bastion-snapshot \
- --ssh-key ~/.ssh/id_ed25519.pub
