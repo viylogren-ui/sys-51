@@ -4,8 +4,8 @@ resource "yandex_compute_snapshot_schedule" "snapshots-my-infrastructure" {
 
 # Кажды день в полночь
   schedule_policy {
-    expression = "@daily"  
-#    expression = "@midnight" 
+#    expression = "@daily"  
+    expression = "@midnight" 
 #    expression = "0 0 ? * *"
   }
 

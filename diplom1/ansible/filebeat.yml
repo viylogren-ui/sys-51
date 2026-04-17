@@ -17,7 +17,7 @@
         update_cache: yes
 
 # Добавление репозитория из зеркала Yandex mirror
-    - name: Добавление Yandex mirror в репозиторий
+    - name: Добавление Yandex mirror в репозитории
       apt_repository:
         repo: "deb [trusted=yes] {{ yandex_mirror_url }}"
         state: present
@@ -53,19 +53,53 @@
     - name: Enable and restart services
       ansible.builtin.service:
         name: "{{ item }}"
-        state: started
-        enabled: yes
-      loop:
-        - filebeat
-        - nginx
-      register: service_status
-      
-# Перезапустить службу, если она неактивна
-    - name: Restart service if inactive
-      ansible.builtin.service:
-        name: "{{ item }}"
+        enabled: true
         state: restarted
       loop:
         - filebeat
         - nginx
-      when: service_status.changed
+
+
+## Создаю директории куда будут валиться логи и ошибкив filebeat от nginx
+#    - name: Создать директорию удаленно
+#      file:
+#        path: /usr/share/filebeat/config/nginx/
+#        state: directory
+#        mode: '0755'
+
+## Копируем config на web-servers для filebeat
+#    - name: Copy Filebeat config file
+#      copy:
+#        src: ./configs/filebeat/config.yml.j2
+#        dest: /etc/filebeat/filebeat.yml
+#        remote_src: no
+#        force: yes
+#        owner: root
+#        group: root
+#        mode: '0644'
+#        backup: yes
+
+
+
+#    - name: Add Elastic GPG key
+#      apt_key:
+#        url: https://yandex.ru
+#        state: present
+#
+#    - name: Add Yandex Mirror repository
+#      apt_repository:
+#        repo: "deb {{ yandex_mirror_url }} stable main"
+#        state: present
+#        filename: elastic-8.x
+#
+#    - name: Install Filebeat
+#      apt:
+#        name: filebeat
+#        state: present
+#        update_cache: yes
+#
+#    - name: Enable and start Filebeat service
+#      systemd:
+#        name: filebeat
+#        enabled: yes
+#        state: started

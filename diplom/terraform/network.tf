@@ -90,7 +90,7 @@ resource "yandex_vpc_security_group" "bastion" {
   }
 }
 
-# входящий трафик на WEB-сервера разрешен только на 22, 443 и 80 TCP-порты из любых сетей
+# входящий трафик на WEB-сервера разрешен только на 22, 443, 80, 10050 TCP-порты из любых сетей
 resource "yandex_vpc_security_group" "web_sg" {
   name       = "web-sg-${var.flow}"
   network_id = yandex_vpc_network.develop.id
@@ -108,10 +108,18 @@ resource "yandex_vpc_security_group" "web_sg" {
     port           = 443
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
+
   ingress {
     description    = "Allow HTTP"
     protocol       = "TCP"
     port           = 80
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description    = "Allow zabbix"
+    protocol       = "TCP"
+    port           = 10050
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 

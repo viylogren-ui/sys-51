@@ -1,0 +1,90 @@
+---
+- name: Install Kibana from Yandex Mirror
+  hosts: kibana-server
+  become: true
+  vars_files:
+    - "./vars/main.yml"
+  tasks:
+
+# Установка необходимых пакетов
+    - name: install packages
+      apt:
+        name:
+          - libnss3
+          - apache2
+          - libwww-perl
+          - openjdk-11-jre
+        state: present
+        update_cache: yes
+
+# Добавление репозитория из зеркала Yandex mirror
+    - name: Добавление Yandex mirror в репозитории
+      apt_repository:
+        repo: "deb [trusted=yes] {{ yandex_mirror_url }}"
+        state: present
+        filename: elasticsearch
+
+# Установка Kibana из добавленного репозитория
+    - name: Установка Kibana
+      apt:
+        name: kibana
+        state: present
+        update_cache: yes
+
+# Добавляем конфиг Kibana
+    - name: Copy Kibana config file
+      copy:
+        src: ./configs/kibana/config.yml
+        dest: /etc/kibana/kibana.yml
+
+# Включение и запуск kibana
+    - name: Включение и запуск kibana
+      systemd:
+        name: kibana
+        enabled: yes
+        state: started
+        daemon_reload: true
+
+
+
+
+
+## Копируем config на elasticserch-server
+#    - name: Copy Elasticsearch config file
+#      copy:
+#        src: ./configs/elasticsearch/config.yml
+#        dest: /etc/elasticsearch/elasticsearch.yml
+#        remote_src: no
+#        force: yes
+#        backup: yes
+
+
+
+
+
+
+
+#---
+#- name: Install kibana
+#  hosts: kibana-server
+#  become: true
+#  gather_facts: true
+#  vars_files:
+#    - "./vars/main.yml"
+#
+#  tasks:
+#  - name: Install Kibana
+#    apt:
+#      deb: "https://mirror.yandex.ru/mirrors/elastic/8/pool/main/k/kibana/kibana-8.8.0-amd64.deb"
+#
+#  - name: Copy Kibana configuration file
+#    template:
+#      src: ./configs/kibana/config.yml.j2
+#      dest: /etc/kibana/kibana.yml
+#
+#  - name: daemon-reload, enable and start Kibana
+#    systemd:
+#      daemon-reload: true
+#      name: kibana.service
+#      enabled: true
+#      state: started

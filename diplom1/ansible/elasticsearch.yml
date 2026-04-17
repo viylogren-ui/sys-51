@@ -1,0 +1,68 @@
+---
+- name: Install Elasticsearch from Yandex Mirror
+  hosts: elasticsearch-server
+  become: true
+  vars_files:
+    - "./vars/main.yml"
+  tasks:
+
+# Установка необходимых пакетов
+    - name: install packages
+      apt:
+        name:
+          - apt-transport-https
+          - gnupg2
+          - curl
+          - default-jre-headless
+          - libwww-perl
+        state: present
+        update_cache: yes
+
+# Добавление репозитория из зеркала Yandex mirror
+    - name: Добавление Yandex mirror в репозитории
+      apt_repository:
+        repo: "deb [trusted=yes] {{ yandex_mirror_url }}"
+        state: present
+        filename: elasticsearch
+
+# Установка elasticsearch из добавленного репозитория
+    - name: Установка Elasticsearch
+      apt:
+        name: elasticsearch
+        state: present
+        update_cache: yes
+
+    - name: Copy Elasticsearch config file
+      copy:
+        src: ./configs/elasticsearch/config.yml
+        dest: /etc/elasticsearch/elasticsearch.yml
+
+# Включение и запуск elasticsearch
+    - name: Включение и запуск Elasticsearch
+      systemd:
+        name: elasticsearch
+        enabled: yes
+        state: started
+        daemon_reload: yes
+
+
+## Копируем config на elasticserch-server
+#    - name: Copy Elasticsearch config file
+#      copy:
+#        src: ./configs/elasticsearch/config.yml
+#        dest: /etc/elasticsearch/elasticsearch.yml
+#        remote_src: no
+#        force: yes
+#        backup: yes
+
+
+
+#    - name: Проверка работоспособности
+#      uri:
+#        url: http://localhost:9200
+#        method: GET
+#        status_code: 200
+#      register: _result
+#      until: _result.status == 200
+#      retries: 10
+#      delay: 5

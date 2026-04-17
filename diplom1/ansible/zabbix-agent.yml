@@ -1,0 +1,70 @@
+---
+- name: install zabbix-agent
+  hosts: hosts
+  become: true
+#  gather_facts: true
+#  vars:
+#    ansible_ssh_user: vitas
+  vars_files:
+    - "./vars/main.yml"
+  
+  tasks:
+
+## Сначала устанавливаю stgresql, nginx
+#  - name: install postgresql, nginx
+#    apt:
+#      name:
+#       - postgresql
+#       - nginx
+#      state: present
+#      update_cache: yes
+
+# Скачиванию .deb пакет конфигурации репозитория с официального сайта Zabbix 
+  - name: Download Zabbix repository .deb package
+    get_url:
+      url: https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.0+ubuntu22.04_all.deb
+      dest: /tmp/zabbix-release_latest_7.0+ubuntu22.04_all.deb
+      mode: '0644'
+
+# Устанавливаю его с помощью apt
+  - name: Install Zabbix repository
+    remote_user: vitas
+    apt:
+      deb: /tmp/zabbix-release_latest_7.0+ubuntu22.04_all.deb
+      update_cache: yes
+
+# Обновляем пакеты
+  - name:  Update and upgrade apt packages
+    apt:
+      upgrade: yes
+      update_cache: yes
+      state: latest
+
+# Установка zabbix-agent
+  - name: Install zabbix-agent
+    apt:
+      name: zabbix-agent
+      state: present
+      update_cache: yes
+
+# Прописываю адрес zabbix-сервера для zabbix-agent 
+  - name: Update Zabbix Server in config
+    lineinfile:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: 'Server='
+      line: 'Server=zabbix-server'
+      state: present
+#    notify: Restart Zabbix Agent
+
+# line: 'Server=89.169.148.11' # Server="yandex_compute_instance.zabbix-server.network_interface.0.nat_ip_address"'  # IP Zabbix Server
+# ${yandex_compute_instance.zabbix-server.network_interface.0.nat_ip_address}
+
+# Перезагрузка и запуск по умолчанию служб
+  - name: Enable and restart services
+    ansible.builtin.service:
+      name: "{{ item }}"
+      enabled: true
+      state: restarted
+    loop:
+      - zabbix-agent
+      - nginx

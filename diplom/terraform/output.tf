@@ -7,7 +7,8 @@ resource "local_file" "inventory" {
   ansible_ssh_private_key_file=~/.ssh/id_ed25519
   ansible_ssh_common_args='-o ProxyCommand="ssh -p 22 -W %h:%p -q vitas@${yandex_compute_instance.bastion.network_interface.0.nat_ip_address}"'
 
-  application-load-balancer=${yandex_alb_load_balancer.alb-load-balancer.listener[0].endpoint[0].address[0].external_ipv4_address[0].address}
+  application-load-balancer=${yandex_alb_load_balancer.alb-load-balancer.listener[0].endpoint[0].address[0].external_ipv4_address[0].address}:80
+
   bastion=${yandex_compute_instance.bastion.network_interface.0.nat_ip_address}
   
   web-a=${yandex_compute_instance.web-a.network_interface.0.ip_address}
@@ -16,6 +17,7 @@ resource "local_file" "inventory" {
   elasticsearch-server=${yandex_compute_instance.elasticsearch-server.network_interface.0.ip_address}
 
   zabbix-server=${yandex_compute_instance.zabbix-server.network_interface.0.nat_ip_address}
+
   kibana-server=${yandex_compute_instance.kibana-server.network_interface.0.nat_ip_address}
 
 

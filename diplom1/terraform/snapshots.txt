@@ -1,0 +1,34 @@
+resource "yandex_compute_snapshot_schedule" "snapshots" {
+  name = "snapshots"
+  description    = "Ежедневные снимки, хранятся 7 дней"
+ 
+    schedule_policy {
+    expression = "0 1 * * *"
+  }
+
+  retention_period = "168h"
+
+  snapshot_spec {
+    description = "retention-snapshot"
+
+  }
+
+  disk_ids = [
+    "${yandex_compute_disk.disk-web-a.id}",
+    "${yandex_compute_disk.disk-web-b.id}",
+    "${yandex_compute_disk.disk-bastion.id}",
+    "${yandex_compute_disk.disk-zabbix-server.id}",
+    "${yandex_compute_disk.disk-elasticsearch-server.id}",
+    "${yandex_compute_disk.disk-kibana-server.id}",
+  ]
+
+  depends_on = [
+     yandex_compute_instance.web-a,
+     yandex_compute_instance.web-b,
+     yandex_compute_instance.bastion,
+     yandex_compute_instance.zabbix-server,
+     yandex_compute_instance.elasticsearch-server,
+     yandex_compute_instance.kibana-server
+  ]
+
+}

@@ -1,0 +1,35 @@
+
+cluster.name: renev-vs-cluster # Имя кластера
+node.name: elasticsearch-server # Уникальное имя для конкретного экземпляра сервера.
+path.data: /var/lib/elasticsearch # Путь к директории с данными.
+path.logs: /var/log/elasticsearch # Путь к лог-файлам.
+network.host: 0.0.0.0 # IP-адрес, который будет слушать Elasticsearch
+http.port: 9200 # Порт для HTTP-запросов (по умолчанию 9200).
+xpack.security.enabled: false
+discovery.type: single-node
+
+
+
+
+
+#cluster.initial_master_nodes: ["elasticsearch-server"] #Список имен узлов, которые будут участвовать в первых выборах мастера.
+
+
+
+#xpack.security.enrollment.enabled: false
+#xpack.security.http.ssl:
+#  enabled: false
+#  keystore.path: certs/http.p12
+#xpack.security.transport.ssl:
+#  enabled: false
+#  verification_mode: certificate
+#  keystore.path: certs/transport.p12
+#  truststore.path: certs/transport.p12
+
+
+
+
+#cluster.name: elk # Имя кластера
+#node.name: # Уникальное имя для конкретного экземпляра сервера.
+#discovery.seed_hosts: # Список IP-адресов других узлов кластера.
+#cluster.initial_master_nodes: # Список имен узлов, которые будут участвовать в первых выборах мастера.
